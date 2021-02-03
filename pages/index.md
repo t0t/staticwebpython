@@ -1,8 +1,7 @@
-title: Rare Pup Detective Agency
-description: We sniff out the clues
+title: Sitio web estático generado desde python
+description: Sentir Orden Formar Conexión
 
-The Rare Pup Detective Agency, Inc is a full-service private investigation agency based in
-Chicago. We provide a professional service that is as confidential as *paws*able.
+El fundamento de la Creación, es un orden arquetípico universal, +0+1234, al que se va yendo eternamente y al que se llega en un instante. Vivo el Arte como técnica de meditación trascendental y como símbolo.
 
 <dog-picture breed="Germanshepherd"></dog-picture>
 

@@ -1,7 +1,6 @@
 body {
-    background-color: yellow;
-}
-
-header {
-    background-color: grey;
+    background-color: rgb(186, 186, 186);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    line-height: 1.7;
 }

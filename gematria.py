@@ -1,3 +1,5 @@
+from junja2 import Template
+
 gematria = [
     ["alef" , "U+05D0" , 1, "א‎"],
     ["bet" , "U+05D1" , 2, "ב‎"],
@@ -27,3 +29,13 @@ gematria = [
     ["pe_sofit" , "U+05E3" , 800, "ף‎"],
     ["tzadi_sofit" , "U+05E5" , 900, "ץ‎"]
 ]
+
+t = Template("Hola {{ propiedad }} ")
+t.render(propiedad="SERGIOOOO")
+
+t = Template("""
+
+Hola {% for n in range(1,10) %} {{ n }}
+
+""")
+t.render(propiedad="SERGIOOOO")

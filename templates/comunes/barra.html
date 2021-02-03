@@ -1,0 +1,12 @@
+<nav>
+    <a href="/" class="logo" aria-hidden="true"></a>
+    
+    <a href="/" {% if page.path=="/" %}active{% endif %}> Sergio Forés</a>
+
+    <a href="{{ url_for('page', path='team') }}" 
+    {% if page.path=="team" %} active {% endif %}> Team
+    </a>
+
+    <a href="{{ url_for('page', path='contact') }}" 
+    {% if page.path=="contact" %} active {% endif %}> Contact</a>
+</nav>
