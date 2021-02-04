@@ -16,6 +16,15 @@ Build:
 $ pipenv run python freeze.py
 ```
 
+Virtual ENV
+
+```
+$ virtualenv env
+$ virtualenv -p /usr/local/bin/python3 env (le digo de usar la v3)
+Activar venv: $ source env/bin/activate
+Desactivar venv: $ deactivate
+
+```
 Run dev entorno PIP
 
 ```
