@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import smtplib #libreria para enviio de emails
 app = Flask(__name__) #la instancia de Flask
 
 numeros = []
@@ -10,11 +11,24 @@ def home():
     lista = [1,2,3,4,5,6,7,8]
     return render_template("home.html", prueba="pruebaaaa",nombre=nombre, num=num, lista=lista)
 
+
+
+
 @app.route("/contacto", methods=["POST"])
 def contacto():
     camponombre = request.form.get("camponombre")
     numeros.append(f"{camponombre}")
+    mensaje = "Has hecho algo!!!!"
+
+    if not camponombre:
+        lanza_error = "ERROR tio que haces que no escribes nada"
+        return render_template("404.html", lanza_error=lanza_error, camponombre=camponombre)
+        
     return render_template("contacto.html", camponombre=camponombre, numeros=numeros)
+
+
+
+
 
 @app.route("/about")
 def about():

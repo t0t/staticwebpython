@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>ERROR PAGE</h1>
+<p>{{ lanza_error }}</p>
+
+<form action="/contacto" method="POST">
+    <input type="text" name="camponombre" placeholder="pon tu nombre">
+    <button>Enviar</button>
+</form>
+
+{% endblock %}
