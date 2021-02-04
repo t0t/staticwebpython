@@ -1,28 +1,28 @@
-from flask import Flask, render_template
-from flask_flatpages import FlatPages
+from flask import Flask, render_template, request
+app = Flask(__name__) #la instancia de Flask
 
-# Tell Flatpages to auto reload when a page is changed, and look for .md files
-FLATPAGES_AUTO_RELOAD = True
-FLATPAGES_EXTENSION = '.md'
+numeros = []
 
-# Create our app object, use this page as our settings (will pick up DEBUG)
-app = Flask(__name__)
+@app.route("/") #decorador para crear rutas
+def home():
+    nombre="Sergio"
+    num = 12
+    lista = [1,2,3,4,5,6,7,8]
+    return render_template("home.html", prueba="pruebaaaa",nombre=nombre, num=num, lista=lista)
 
-# For settings, we just use this file itself, very easy to configure
-app.config.from_object(__name__)
+@app.route("/contacto", methods=["POST"])
+def contacto():
+    camponombre = request.form.get("camponombre")
+    numeros.append(f"{camponombre}")
+    return render_template("contacto.html", camponombre=camponombre, numeros=numeros)
 
-# We want Flask to allow no slashes after paths, because they get turned into flat files
-app.url_map.strict_slashes = False
+@app.route("/about")
+def about():
+    return render_template("about.html", title="titulo")
 
-# Create an instance of our extension
-pages = FlatPages(app)
+@app.route("/hola/<string:nombre>")
+def hola(nombre):
+    return f"<h1>Holaaaa: {nombre}</h1>"
 
-# Route to FlatPages at our root, and route any path that ends in ".html"
-@app.route("/")
-@app.route("/<path:path>.html")
-def page(path=None):
-    # Look for the page with FlatPages, or find "index" if we have no path
-    page = pages.get_or_404(path or 'index')
-
-    # Render the template "page.html" with our page and title
-    return render_template("page.html", page=page, title=page.meta['title'])
+if __name__ == "__main__":
+    freezer.run(debug=True)

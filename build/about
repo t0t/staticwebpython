@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% block title %} {{ title }} {% endblock%}</title>
+    <title> titulo </title>
     <link rel="stylesheet" href="/static/base.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="module" src="/static/js/dogs.js"></script>
@@ -12,11 +12,15 @@
 
 <body>
     
-    <header>{% include "./comunes/nav.html" %}</header>
+    <header><nav>
+    <a href="/" class="logo" aria-hidden="true">HOME</a>
+    <a href="/about" aria-hidden="true">ABOUT</a>
+    <a href="/contacto" aria-hidden="true">CONTACTO</a>
+</nav></header>
 
-    {% block content %}
-    <main></main>
-    {% endblock %}
+    
+<h1>ESTOY EN ABOUTTTTTTTT</h1>
+
 
 </body>
 

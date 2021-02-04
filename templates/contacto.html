@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+
+
+<p>ESTOY EN CONTACTO</p>
+<h1>Hola, {{ camponombre }}</h1>
+
+{{ numeros }}
+
+<ul>
+{% for num in numeros %}
+    <li>{{ num }}</li>
+{% endfor %}
+</ul>
+
+
+
+{% endblock %}

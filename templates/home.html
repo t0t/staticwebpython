@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+    <h1>Hola {{ nombre }}</h1>
+    <h1>{{ prueba }}</h1>
+
+    <form action="/contacto" method="POST">
+        <input type="text" name="camponombre" placeholder="pon tu nombre">
+        <button>Enviar</button>
+    </form>
+
+
+    {% if num == 1 %}
+        <h1>SOL</h1>
+    {% else %}
+        <h1>LUNA</h1>
+    {% endif %}
+
+    <ul>
+    {% for n in lista %}
+        <li>{{ n }}</li>
+    {% endfor %}
+    </ul>
+
+
+    
+    
+{% endblock %}
