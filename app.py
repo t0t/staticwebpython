@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import smtplib #libreria para enviio de emails
+
 app = Flask(__name__) #la instancia de Flask
 
 numeros = []
@@ -14,7 +14,7 @@ def home():
 
 
 
-@app.route("/contacto", methods=["POST"])
+@app.route("/contacto")
 def contacto():
     camponombre = request.form.get("camponombre")
     numeros.append(f"{camponombre}")
@@ -24,7 +24,7 @@ def contacto():
         lanza_error = "ERROR tio que haces que no escribes nada"
         return render_template("404.html", lanza_error=lanza_error, camponombre=camponombre)
         
-    return render_template("contacto.html", camponombre=camponombre, numeros=numeros)
+    return render_template("contacto.html", numeros=numeros)
 
 
 
@@ -38,5 +38,5 @@ def about():
 def hola(nombre):
     return f"<h1>Holaaaa: {nombre}</h1>"
 
-if __name__ == "__main__":
-    freezer.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
